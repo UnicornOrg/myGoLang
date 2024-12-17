@@ -27,7 +27,6 @@ func main() {
 func main2() {
 	//fmt.Println("Hello, World!")
 	http.HandleFunc("/", func(rw http.ResponseWriter, rs *http.Request) {
-		d, _ := ioutil.ReadAll(rs.Body)
 		fmt.Fprintf(rw, "Hello %s", d)
 	})
 	http.HandleFunc("/goodbye", func(http.ResponseWriter, *http.Request) {
