@@ -4,12 +4,6 @@
 //new terminal -- curl -v -d 'World' localhost:9090
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
-)
 
 func main() {
 	//fmt.Println("Hello, World!")
