@@ -1,0 +1,32 @@
+{
+  "name": "owasp-nodejs-goat",
+  "private": true,
+  "version": "1.3.0",
+  "description": "A tool to learn OWASP Top 10 for node.js developers",
+  "main": "server.js",
+  "dependencies": {
+    "swig": "^1.4.2",
+    "marked":	"4.0.10"
+  },
+  "comments": {
+    "//": "a9 insecure components"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "cross-env PORT=5000 nodemon",
+    "test:e2e": "cross-env NODE_ENV=test cypress open",
+    "test:ci": "cross-env NODE_ENV=test cypress run",
+    "test": "node node_modules/grunt-cli/bin/grunt test",
+    "db:seed": "cross-env NODE_ENV=test grunt db-reset",
+    "precommit": "grunt precommit",
+    "docker-mongo": "docker run -p 27017:27017 --name mongo  mongo:latest",
+    "start-infra": "docker-compose up",
+    "stop-infra": "docker-compose down",
+    "cy:verify": "cypress verify"
+  },
+  "devDependencies": {
+    "zaproxy": "^0.2.0"
+  },
+  "repository": "https://github.com/OWASP/NodejsGoat",
+  "license": "Apache 2.0"
+}
